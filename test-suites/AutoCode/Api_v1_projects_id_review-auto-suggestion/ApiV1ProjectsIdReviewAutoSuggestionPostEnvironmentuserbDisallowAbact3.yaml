@@ -1,0 +1,192 @@
+---
+parent: Api_v1_projects_id_review-auto-suggestion
+name: ApiV1ProjectsIdReviewAutoSuggestionPostEnvironmentuserbDisallowAbact3
+description: Desc
+authors:
+- apisec Bot
+type: SUITE
+init:
+- Environment1CreateUserAInitAbact3
+localVariables: []
+path: /api/v1/projects/{id}/review-auto-suggestion
+endpoint: /api/v1/projects/{{@Environment1CreateUserAInitAbact3_Response.data.id}}/review-auto-suggestion
+method: POST
+auth: UserB
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "artificialIntelligenceComment" : "{{@Random}}",
+      "assertionDescription" : "{{@Random}}",
+      "assertionsResult" : [ "{{@Random}}" ],
+      "auth" : "{{@Random}}",
+      "averageCvss" : "{{@Random}}",
+      "bounty" : "{{@RandomInteger}}",
+      "category" : "{{@Random}}",
+      "categoryDisplayLabel" : "{{@Random}}",
+      "comment" : "{{@Random}}",
+      "createdBy" : "",
+      "createdDate" : "",
+      "cvssRating" : "{{@Random}}",
+      "cvssScore" : "{{@RandomDouble | 4}}",
+      "endPoint" : "{{@Random}}",
+      "env" : "{{@Random}}",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Random}}",
+        "createdBy" : "",
+        "createdDate" : "",
+        "description" : "{{@Random}}",
+        "endpoint" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Random}}",
+          "accountType" : "Slack",
+          "id" : "",
+          "issueType" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "projectKey" : "{{@Random}}",
+          "url" : "{{@Random}}"
+        },
+        "localOffSet" : "{{@RandomInteger}}",
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Random}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Random}}",
+        "reachable" : false,
+        "refId" : "{{@Random}}",
+        "region" : "{{@Random}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Random}}",
+        "urlReachableOn" : null,
+        "version" : ""
+      },
+      "estimates" : "{{@RandomDouble | 4}}",
+      "failedCount" : "{{@RandomInteger}}",
+      "falsePositive" : false,
+      "generatorType" : "{{@Random}}",
+      "id" : "{{@Environment1CreateUserAInitAbact3_Response.data.id}}",
+      "inactive" : false,
+      "isNew" : "{{@Random}}",
+      "issueDesc" : "{{@Random}}",
+      "issues" : [ {
+        "autoSuggestionId" : "{{@Random}}",
+        "envName" : "{{@Random}}",
+        "issueId" : "{{@Random}}",
+        "issueNumber" : "{{@Random}}",
+        "issueTrackerType" : "{{@Random}}",
+        "jobId" : "{{@Faker.job.title}}",
+        "jobName" : "{{@Faker.job.title}}",
+        "runId" : "{{@Random}}",
+        "status" : "{{@Random}}"
+      } ],
+      "label" : "{{@Random}}",
+      "manualEndpoint" : false,
+      "method" : "{{@Random}}",
+      "modifiedBy" : "",
+      "modifiedDate" : "",
+      "path" : "{{@Random}}",
+      "projectId" : "{{@Random}}",
+      "projectName" : "{{@Random}}",
+      "rank" : "{{@Random}}",
+      "region" : "{{@Random}}",
+      "regression" : false,
+      "remediation" : "{{@Random}}",
+      "resourceName" : "{{@Random}}",
+      "respStatusCode" : "{{@Random}}",
+      "reviewTag" : false,
+      "runId" : "{{@Random}}",
+      "severity" : "Low",
+      "status" : "SKIPPED",
+      "suggestion" : "{{@Random}}",
+      "suggestionId" : "{{@Random}}",
+      "tags" : "{{@Random}}",
+      "testCaseNumber" : "{{@Random}}",
+      "testSuiteId" : "{{@Random}}",
+      "testSuiteName" : "{{@Random}}",
+      "totalFailed" : "{{@RandomInteger}}",
+      "totalPassed" : "{{@RandomInteger}}",
+      "updatedDate" : "{{@Random}}",
+      "version" : "",
+      "wireLogs" : "{{@Random}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@StatusCode == 401 OR @StatusCode == 403'
+cleanup: []
+severity: High
+category: ABAC_Level3
+tags:
+- V1
+- Data_Access_Control
+- '[2020 CWE TOP 22 ] CWE - 269'
+- OWASP-API1
+- OWASP API Security Top 10
+- '[PCI DSS 3.2.1] 6.5.8'
+- Broken Object Level Authorization
+- Penetration Testing
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

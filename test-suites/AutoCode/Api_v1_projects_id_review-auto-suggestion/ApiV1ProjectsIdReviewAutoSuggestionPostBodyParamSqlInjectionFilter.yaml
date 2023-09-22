@@ -1,0 +1,193 @@
+---
+parent: Api_v1_projects_id_review-auto-suggestion
+name: ApiV1ProjectsIdReviewAutoSuggestionPostBodyParamSqlInjectionFilter
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/projects/{id}/review-auto-suggestion
+endpoint: /api/v1/projects/{{@Var.id}}/review-auto-suggestion
+method: POST
+auth: Default
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "artificialIntelligenceComment" : "{{@Injection}}",
+      "assertionDescription" : "{{@Injection}}",
+      "assertionsResult" : [ "{{@Random}}" ],
+      "auth" : "{{@Injection}}",
+      "averageCvss" : "{{@Injection}}",
+      "bounty" : "{{@Var.bounty}}",
+      "category" : "{{@Injection}}",
+      "categoryDisplayLabel" : "{{@Injection}}",
+      "comment" : "{{@Injection}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "cvssRating" : "{{@Injection}}",
+      "cvssScore" : "{{@Var.cvssScore}}",
+      "endPoint" : "{{@Injection}}",
+      "env" : "{{@Injection}}",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Injection}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Injection}}",
+        "endpoint" : "{{@Injection}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Injection}}",
+          "accountType" : "{{@Var.accountType}}",
+          "id" : "{{@Var.id}}",
+          "issueType" : "{{@Injection}}",
+          "name" : "{{@Injection}}",
+          "projectKey" : "{{@Injection}}",
+          "url" : "{{@Injection}}"
+        },
+        "localOffSet" : "{{@Var.localOffSet}}",
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Injection}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Injection}}",
+        "reachable" : false,
+        "refId" : "{{@Injection}}",
+        "region" : "{{@Injection}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Injection}}",
+        "urlReachableOn" : null,
+        "version" : "{{@Var.version}}"
+      },
+      "estimates" : "{{@Var.estimates}}",
+      "failedCount" : "{{@Var.failedCount}}",
+      "falsePositive" : false,
+      "generatorType" : "{{@Injection}}",
+      "id" : "{{@Var.id}}",
+      "inactive" : false,
+      "isNew" : "{{@Injection}}",
+      "issueDesc" : "{{@Injection}}",
+      "issues" : [ {
+        "autoSuggestionId" : "{{@Random}}",
+        "envName" : "{{@Random}}",
+        "issueId" : "{{@Random}}",
+        "issueNumber" : "{{@Random}}",
+        "issueTrackerType" : "{{@Random}}",
+        "jobId" : "{{@Faker.job.title}}",
+        "jobName" : "{{@Faker.job.title}}",
+        "runId" : "{{@Random}}",
+        "status" : "{{@Random}}"
+      } ],
+      "label" : "{{@Injection}}",
+      "manualEndpoint" : false,
+      "method" : "{{@Injection}}",
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "path" : "{{@Injection}}",
+      "projectId" : "{{@Injection}}",
+      "projectName" : "{{@Injection}}",
+      "rank" : "{{@Injection}}",
+      "region" : "{{@Injection}}",
+      "regression" : false,
+      "remediation" : "{{@Injection}}",
+      "resourceName" : "{{@Injection}}",
+      "respStatusCode" : "{{@Injection}}",
+      "reviewTag" : false,
+      "runId" : "{{@Injection}}",
+      "severity" : "{{@Var.severity}}",
+      "status" : "{{@Var.status}}",
+      "suggestion" : "{{@Injection}}",
+      "suggestionId" : "{{@Injection}}",
+      "tags" : "{{@Injection}}",
+      "testCaseNumber" : "{{@Injection}}",
+      "testSuiteId" : "{{@Injection}}",
+      "testSuiteName" : "{{@Injection}}",
+      "totalFailed" : "{{@Var.totalFailed}}",
+      "totalPassed" : "{{@Var.totalPassed}}",
+      "updatedDate" : "{{@Injection}}",
+      "version" : "{{@Var.version}}",
+      "wireLogs" : "{{@Injection}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@ResponseTime < 7000 OR @ResponseTime > 10000'
+cleanup: []
+severity: Medium
+category: sql_injection_filter
+tags:
+- V1
+- OWASP-API8
+- '[PCI DSS 3.0] 6.5.1'
+- '[PCI DSS 3.2.1] 6.5.1'
+- OWASP - OTG-INPVAL-005
+- OWASP API Security Top 10
+- Injection
+- Intrusive
+- '[2020 CWE TOP 6] CWE - 89'
+- '[MITRE ATT&CK] T1190'
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: '@APIsec/Common/sql_injection_filter'
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

@@ -1,0 +1,152 @@
+---
+parent: Api_v1_custom-generators
+name: ApiV1CustomGeneratorsPostCorsConfig
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/custom-generators
+endpoint: /api/v1/custom-generators
+method: POST
+auth: Default
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+- 'Origin: vulnerable.{{@Host}}'
+testCases:
+- id: 1
+  body: |-
+    {
+      "activatedDate" : null,
+      "activeByDefault" : false,
+      "addOptionalParams" : false,
+      "assertionDescription" : "{{@Var.assertionDescription}}",
+      "assertions" : [ "{{@Random}}" ],
+      "assertionsText" : "{{@Var.assertionsText}}",
+      "auth" : "{{@Var.auth}}",
+      "authors" : "{{@Var.authors}}",
+      "beta" : false,
+      "bountyValue" : "{{@Var.bountyValue}}",
+      "category" : "{{@Var.category}}",
+      "categoryGroup" : "{{@Var.categoryGroup}}",
+      "coverageMultiplier" : "{{@Var.coverageMultiplier}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "customHeaders" : "{{@Var.customHeaders}}",
+      "customType" : "{{@Var.customType}}",
+      "cvssScore" : "{{@Var.cvssScore}}",
+      "cvssScoreType" : "{{@Var.cvssScoreType}}",
+      "data" : "{{@Var.data}}",
+      "dataRecords" : [ {
+        "createdBy" : "",
+        "createdDate" : "",
+        "dataSet" : "{{@Random}}",
+        "dataSetId" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "record" : "{{@Random}}",
+        "version" : ""
+      } ],
+      "database" : {
+        "name" : "{{@Var.name}}",
+        "version" : "{{@Var.version}}"
+      },
+      "defaultCatAssertion" : false,
+      "deleted" : false,
+      "displayHeaderDescription" : "{{@Var.displayHeaderDescription}}",
+      "displayHeaderLabel" : "{{@Var.displayHeaderLabel}}",
+      "endpointSelection" : "{{@Var.endpointSelection}}",
+      "fixHours" : "{{@Var.fixHours}}",
+      "generatorScope" : "{{@Var.generatorScope}}",
+      "id" : "{{@Var.id}}",
+      "imageUrl" : "{{@Var.imageUrl}}",
+      "inactive" : false,
+      "matches" : [ {
+        "allowRoles" : "{{@Random}}",
+        "bodyProperties" : "{{@Random}}",
+        "denyRoles" : "{{@Random}}",
+        "methods" : "{{@Random}}",
+        "name" : "{{@Random}}",
+        "pathPatterns" : "{{@Random}}",
+        "queryParams" : "{{@Random}}",
+        "resourceSamples" : "{{@Random}}",
+        "value" : "{{@Random}}"
+      } ],
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "org" : {
+        "authorizationEndpoiont" : "{{@Var.authorizationEndpoiont}}",
+        "billingEmail" : "{{@Var.billingEmail}}",
+        "clientId" : "{{@Var.clientId}}",
+        "company" : "{{@Var.company}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Var.description}}",
+        "enterpriseLicense" : "{{@Var.enterpriseLicense}}",
+        "freeLicense" : "{{@Var.freeLicense}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issuer" : "{{@Var.issuer}}",
+        "location" : "{{@Var.location}}",
+        "mfaEnabled" : false,
+        "mfaEnabledDate" : null,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "oidcEndpoiont" : "{{@Var.oidcEndpoiont}}",
+        "orgPlan" : "{{@Var.orgPlan}}",
+        "orgTag" : "{{@Var.orgTag}}",
+        "orgType" : "{{@Var.orgType}}",
+        "ownerName" : "{{@Var.ownerName}}",
+        "referrer" : "{{@Var.referrer}}",
+        "ssoEnabled" : false,
+        "ssoType" : "{{@Var.ssoType}}",
+        "suiteValidationLimit" : "{{@Var.suiteValidationLimit}}",
+        "tokenEndpoiont" : "{{@Var.tokenEndpoiont}}",
+        "url" : "{{@Var.url}}",
+        "usedEntLicense" : "{{@Var.usedEntLicense}}",
+        "version" : "{{@Var.version}}"
+      },
+      "remediation" : "{{@Var.remediation}}",
+      "researchers" : "{{@Var.researchers}}",
+      "sequenceOrder" : "{{@Var.sequenceOrder}}",
+      "severity" : "{{@Var.severity}}",
+      "showResponse" : false,
+      "skipVulnerabilityFiling" : false,
+      "supportedParams" : "{{@Var.supportedParams}}",
+      "tags" : [ "{{@Random}}" ],
+      "tierType" : "{{@Var.tierType}}",
+      "type" : "{{@Var.type}}",
+      "version" : "{{@Var.version}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(\*)(.*)'
+- '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(vulnerable)(.*)'
+cleanup: []
+severity: Medium
+category: cors_config
+tags:
+- V1
+- Misconfiguration
+- OWASP-OriginHeaderScrutiny
+- OWASP-API7
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

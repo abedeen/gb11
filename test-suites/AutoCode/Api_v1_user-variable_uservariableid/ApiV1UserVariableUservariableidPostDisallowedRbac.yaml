@@ -1,0 +1,338 @@
+---
+parent: Api_v1_user-variable_uservariableid
+name: ApiV1UserVariableUservariableidPostDisallowedRbac
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/user-variable/{userVariableId}
+endpoint: /api/v1/user-variable/{{@Var.userVariableId}}
+method: POST
+auth: ""
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "comments" : "{{@Var.comments}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Var.baseUrl}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Var.description}}",
+        "endpoint" : "{{@Var.endpoint}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Var.account}}",
+          "accountType" : "{{@Var.accountType}}",
+          "id" : "{{@Var.id}}",
+          "issueType" : "{{@Var.issueType}}",
+          "name" : "{{@Var.name}}",
+          "projectKey" : "{{@Var.projectKey}}",
+          "url" : "{{@Var.url}}"
+        },
+        "localOffSet" : "{{@Var.localOffSet}}",
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Var.projectId}}",
+        "reachable" : false,
+        "refId" : "{{@Var.refId}}",
+        "region" : "{{@Var.region}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Var.url}}",
+        "urlReachableOn" : null,
+        "version" : "{{@Var.version}}"
+      },
+      "format" : "{{@Var.format}}",
+      "id" : "{{@Var.id}}",
+      "inactive" : false,
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "name" : "{{@Var.name}}",
+      "organization" : {
+        "authorizationEndpoiont" : "{{@Var.authorizationEndpoiont}}",
+        "billingEmail" : "{{@Var.billingEmail}}",
+        "clientId" : "{{@Var.clientId}}",
+        "company" : "{{@Var.company}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Var.description}}",
+        "enterpriseLicense" : "{{@Var.enterpriseLicense}}",
+        "freeLicense" : "{{@Var.freeLicense}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issuer" : "{{@Var.issuer}}",
+        "location" : "{{@Var.location}}",
+        "mfaEnabled" : false,
+        "mfaEnabledDate" : null,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "oidcEndpoiont" : "{{@Var.oidcEndpoiont}}",
+        "orgPlan" : "{{@Var.orgPlan}}",
+        "orgTag" : "{{@Var.orgTag}}",
+        "orgType" : "{{@Var.orgType}}",
+        "ownerName" : "{{@Var.ownerName}}",
+        "referrer" : "{{@Var.referrer}}",
+        "ssoEnabled" : false,
+        "ssoType" : "{{@Var.ssoType}}",
+        "suiteValidationLimit" : "{{@Var.suiteValidationLimit}}",
+        "tokenEndpoiont" : "{{@Var.tokenEndpoiont}}",
+        "url" : "{{@Var.url}}",
+        "usedEntLicense" : "{{@Var.usedEntLicense}}",
+        "version" : "{{@Var.version}}"
+      },
+      "project" : {
+        "account" : {
+          "accountType" : "{{@Var.accountType}}",
+          "createdBy" : "{{@Var.createdBy}}",
+          "createdDate" : "{{@Var.createdDate}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "isSSH" : false,
+          "modifiedBy" : "{{@Var.modifiedBy}}",
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "name" : "{{@Var.name}}",
+          "org" : {
+            "createdBy" : "{{@Var.createdBy}}",
+            "createdDate" : "{{@Var.createdDate}}",
+            "id" : "{{@Var.id}}",
+            "inactive" : false,
+            "modifiedBy" : "{{@Var.modifiedBy}}",
+            "modifiedDate" : "{{@Var.modifiedDate}}",
+            "name" : "{{@Var.name}}",
+            "orgPlan" : "{{@Var.orgPlan}}",
+            "version" : "{{@Var.version}}"
+          },
+          "region" : "{{@Var.region}}",
+          "version" : "{{@Var.version}}"
+        },
+        "activateScheduledReports" : false,
+        "activeGenerators" : [ "{{@Random}}" ],
+        "apiGatewayAccountType" : "{{@Var.apiGatewayAccountType}}",
+        "apiGatewayId" : "{{@Var.apiGatewayId}}",
+        "apiGroupId" : "{{@Var.apiGroupId}}",
+        "apiId" : "{{@Var.apiId}}",
+        "apiType" : "{{@Var.apiType}}",
+        "autoGenSuites" : "{{@Var.autoGenSuites}}",
+        "baseUrl" : "{{@Var.baseUrl}}",
+        "branch" : "{{@Var.branch}}",
+        "bugsClosed" : "{{@Var.bugsClosed}}",
+        "bugsOpen" : "{{@Var.bugsOpen}}",
+        "coverage" : "{{@Var.coverage}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Var.description}}",
+        "endpointsCount" : "{{@Var.endpointsCount}}",
+        "entitledUsers" : [ {
+          "email" : "{{@Faker.internet.emailAddress}}",
+          "entitlementType" : "SECURITY_RESEARCHER",
+          "projectId" : "{{@Random}}",
+          "userId" : "{{@Random}}"
+        } ],
+        "envReachable" : false,
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "isFileLoad" : "{{@Var.isFileLoad}}",
+        "issueTracker" : {
+          "account" : "{{@Var.account}}",
+          "accountType" : "{{@Var.accountType}}",
+          "id" : "{{@Var.id}}",
+          "issueType" : "{{@Var.issueType}}",
+          "name" : "{{@Var.name}}",
+          "projectKey" : "{{@Var.projectKey}}",
+          "url" : "{{@Var.url}}"
+        },
+        "lastCommit" : "{{@Var.lastCommit}}",
+        "lastRunCreation" : null,
+        "lastSync" : null,
+        "licenses" : [ "{{@Random}}" ],
+        "localOffSet" : "{{@Var.localOffSet}}",
+        "manualEpFound" : false,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "noApi" : false,
+        "nonWorkingPlaybooksCount" : "{{@Var.nonWorkingPlaybooksCount}}",
+        "nonWorkingPlaybooksPercentage" : "{{@Var.nonWorkingPlaybooksPercentage}}",
+        "notifications" : [ {
+          "account" : "{{@Random}}",
+          "channel" : "{{@Random}}",
+          "id" : "",
+          "name" : "{{@Random}}",
+          "to" : "{{@Random}}"
+        } ],
+        "openAPISpec" : "{{@Var.openAPISpec}}",
+        "openText" : "{{@Var.openText}}",
+        "org" : {
+          "createdBy" : "{{@Var.createdBy}}",
+          "createdDate" : "{{@Var.createdDate}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "modifiedBy" : "{{@Var.modifiedBy}}",
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "name" : "{{@Var.name}}",
+          "orgPlan" : "{{@Var.orgPlan}}",
+          "version" : "{{@Var.version}}"
+        },
+        "owner" : "{{@Var.owner}}",
+        "personalizedCoverage" : {
+          "auths" : [ {
+            "accessTokenUri" : "{{@Random}}",
+            "authType" : "No_Authentication",
+            "authorizationScheme" : "query",
+            "body" : "{{@Random}}",
+            "clientAuthenticationScheme" : "query",
+            "clientId" : "{{@Random}}",
+            "clientSecret" : "{{@Random}}",
+            "cmdCache" : "{{@Random}}",
+            "contentType" : "{{@Random}}",
+            "curlHeaders" : "{{@Random}}",
+            "curlRequest" : "{{@Random}}",
+            "curlResponse" : "{{@Random}}",
+            "curlUrl" : "{{@Random}}",
+            "curlVariables" : "{{@Random}}",
+            "endpoint" : "{{@Random}}",
+            "grantType" : "password",
+            "header_1" : "{{@Random}}",
+            "header_2" : "{{@Random}}",
+            "header_3" : "{{@Random}}",
+            "id" : "",
+            "inactive" : false,
+            "invalid" : false,
+            "lastTestedOn" : null,
+            "method" : "{{@Random}}",
+            "methodToken" : "{{@Random}}",
+            "name" : "{{@Random}}",
+            "password" : "{{@PassAlphaNumSpl}}",
+            "passwordMasked" : false,
+            "preEstablishedRedirectUri" : "{{@Random}}",
+            "preScript" : "{{@Random}}",
+            "scope" : "{{@Random}}",
+            "tokenAccess" : "{{@Random}}",
+            "tokenName" : "{{@Random}}",
+            "useCurrentUri" : false,
+            "userAuthorizationUri" : "{{@Random}}",
+            "username" : "{{@Faker.name.username}}"
+          } ],
+          "commandChecks" : "{{@Var.commandChecks}}",
+          "createdBy" : { },
+          "createdDate" : "{{@Var.createdDate}}",
+          "cron" : "{{@Var.cron}}",
+          "databases" : "{{@Var.databases}}",
+          "email" : "{{@Var.email}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "modifiedBy" : { },
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "projectId" : "{{@Var.projectId}}",
+          "roles" : "{{@Var.roles}}",
+          "timeZone" : "{{@Var.timeZone}}",
+          "tokenExample" : "{{@Var.tokenExample}}",
+          "version" : "{{@Var.version}}"
+        },
+        "planType" : "{{@Var.planType}}",
+        "playbooksCount" : "{{@Var.playbooksCount}}",
+        "props" : null,
+        "region" : "{{@Var.region}}",
+        "skipAbac" : false,
+        "skipGitbackup" : false,
+        "source" : "{{@Var.source}}",
+        "stage" : "{{@Var.stage}}",
+        "status" : "{{@Var.status}}",
+        "swaggerEditorOas" : "{{@Var.swaggerEditorOas}}",
+        "tags" : [ "{{@Random}}" ],
+        "url" : "{{@Var.url}}",
+        "urlReachableOn" : null,
+        "validation" : false,
+        "version" : "{{@Var.version}}"
+      },
+      "scope" : "{{@Var.scope}}",
+      "type" : "{{@Var.type}}",
+      "value" : "{{@Var.value}}",
+      "version" : "{{@Var.version}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@StatusCode == 401 OR @StatusCode == 403'
+cleanup: []
+severity: High
+category: RBAC
+tags:
+- V1
+- OWASP-API5
+- OWASP - OTG-IDENT-001
+- OWASP API Security Top 10
+- Broken Function Level Authorization
+- Endpoint_Access_Control
+- '[2020 CWE TOP 22 ] CWE - 269'
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

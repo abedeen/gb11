@@ -1,0 +1,340 @@
+---
+parent: Api_v1_user-variable_uservariableid
+name: ApiV1UserVariableUservariableidPostUservariableuserbDisallowAbact3
+description: Desc
+authors:
+- apisec Bot
+type: SUITE
+init:
+- UserVariableCreateUserAInitAbact3
+localVariables: []
+path: /api/v1/user-variable/{userVariableId}
+endpoint: /api/v1/user-variable/{{@UserVariableCreateUserAInitAbact3_Response.data.id}}
+method: POST
+auth: UserB
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "comments" : "{{@Random}}",
+      "createdBy" : "",
+      "createdDate" : "",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Random}}",
+        "createdBy" : "",
+        "createdDate" : "",
+        "description" : "{{@Random}}",
+        "endpoint" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Random}}",
+          "accountType" : "Slack",
+          "id" : "",
+          "issueType" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "projectKey" : "{{@Random}}",
+          "url" : "{{@Random}}"
+        },
+        "localOffSet" : "{{@RandomInteger}}",
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Random}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Random}}",
+        "reachable" : false,
+        "refId" : "{{@Random}}",
+        "region" : "{{@Random}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Random}}",
+        "urlReachableOn" : null,
+        "version" : ""
+      },
+      "format" : "{{@Random}}",
+      "id" : "{{@UserVariableCreateUserAInitAbact3_Response.data.id}}",
+      "inactive" : false,
+      "modifiedBy" : "",
+      "modifiedDate" : "",
+      "name" : "{{@Random}}",
+      "organization" : {
+        "authorizationEndpoiont" : "{{@Random}}",
+        "billingEmail" : "{{@Faker.internet.emailAddress}}",
+        "clientId" : "{{@Random}}",
+        "company" : "{{@Faker.company.name}}",
+        "createdBy" : "",
+        "createdDate" : "",
+        "description" : "{{@Random}}",
+        "enterpriseLicense" : "{{@RandomInteger}}",
+        "freeLicense" : "{{@RandomInteger}}",
+        "id" : "",
+        "inactive" : false,
+        "issuer" : "{{@Random}}",
+        "location" : "{{@Random}}",
+        "mfaEnabled" : false,
+        "mfaEnabledDate" : null,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Random}}",
+        "oidcEndpoiont" : "{{@Random}}",
+        "orgPlan" : "FREE",
+        "orgTag" : "CUSTOMER",
+        "orgType" : "TEAM",
+        "ownerName" : "{{@Random}}",
+        "referrer" : "{{@Random}}",
+        "ssoEnabled" : false,
+        "ssoType" : "OKTA",
+        "suiteValidationLimit" : "{{@RandomInteger}}",
+        "tokenEndpoiont" : "{{@Random}}",
+        "url" : "{{@Random}}",
+        "usedEntLicense" : "{{@RandomInteger}}",
+        "version" : ""
+      },
+      "project" : {
+        "account" : {
+          "accountType" : "WSO2",
+          "createdBy" : "",
+          "createdDate" : "",
+          "id" : "",
+          "inactive" : false,
+          "isSSH" : false,
+          "modifiedBy" : "",
+          "modifiedDate" : "",
+          "name" : "{{@Random}}",
+          "org" : {
+            "createdBy" : "",
+            "createdDate" : "",
+            "id" : "",
+            "inactive" : false,
+            "modifiedBy" : "",
+            "modifiedDate" : "",
+            "name" : "{{@Random}}",
+            "orgPlan" : "{{@Random}}",
+            "version" : ""
+          },
+          "region" : "{{@Random}}",
+          "version" : ""
+        },
+        "activateScheduledReports" : false,
+        "activeGenerators" : [ "{{@Random}}" ],
+        "apiGatewayAccountType" : "AZURE_STORAGE",
+        "apiGatewayId" : "{{@Random}}",
+        "apiGroupId" : "{{@Random}}",
+        "apiId" : "{{@Random}}",
+        "apiType" : "{{@Random}}",
+        "autoGenSuites" : "{{@RandomInteger}}",
+        "baseUrl" : "{{@Random}}",
+        "branch" : "{{@Random}}",
+        "bugsClosed" : "{{@RandomInteger}}",
+        "bugsOpen" : "{{@RandomInteger}}",
+        "coverage" : "{{@RandomInteger}}",
+        "createdBy" : "",
+        "createdDate" : "",
+        "description" : "{{@Random}}",
+        "endpointsCount" : "{{@RandomInteger}}",
+        "entitledUsers" : [ {
+          "email" : "{{@Faker.internet.emailAddress}}",
+          "entitlementType" : "SECURITY_RESEARCHER",
+          "projectId" : "{{@Random}}",
+          "userId" : "{{@Random}}"
+        } ],
+        "envReachable" : false,
+        "id" : "",
+        "inactive" : false,
+        "isFileLoad" : "{{@Random}}",
+        "issueTracker" : {
+          "account" : "{{@Random}}",
+          "accountType" : "IdeaBiz",
+          "id" : "",
+          "issueType" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "projectKey" : "{{@Random}}",
+          "url" : "{{@Random}}"
+        },
+        "lastCommit" : "{{@Random}}",
+        "lastRunCreation" : null,
+        "lastSync" : null,
+        "licenses" : [ "{{@Random}}" ],
+        "localOffSet" : "{{@RandomInteger}}",
+        "manualEpFound" : false,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Random}}",
+        "noApi" : false,
+        "nonWorkingPlaybooksCount" : "{{@RandomInteger}}",
+        "nonWorkingPlaybooksPercentage" : "{{@RandomInteger}}",
+        "notifications" : [ {
+          "account" : "{{@Random}}",
+          "channel" : "{{@Random}}",
+          "id" : "",
+          "name" : "{{@Random}}",
+          "to" : "{{@Random}}"
+        } ],
+        "openAPISpec" : "{{@Random}}",
+        "openText" : "{{@Random}}",
+        "org" : {
+          "createdBy" : "",
+          "createdDate" : "",
+          "id" : "",
+          "inactive" : false,
+          "modifiedBy" : "",
+          "modifiedDate" : "",
+          "name" : "{{@Random}}",
+          "orgPlan" : "{{@Random}}",
+          "version" : ""
+        },
+        "owner" : "{{@Random}}",
+        "personalizedCoverage" : {
+          "auths" : [ {
+            "accessTokenUri" : "{{@Random}}",
+            "authType" : "No_Authentication",
+            "authorizationScheme" : "query",
+            "body" : "{{@Random}}",
+            "clientAuthenticationScheme" : "query",
+            "clientId" : "{{@Random}}",
+            "clientSecret" : "{{@Random}}",
+            "cmdCache" : "{{@Random}}",
+            "contentType" : "{{@Random}}",
+            "curlHeaders" : "{{@Random}}",
+            "curlRequest" : "{{@Random}}",
+            "curlResponse" : "{{@Random}}",
+            "curlUrl" : "{{@Random}}",
+            "curlVariables" : "{{@Random}}",
+            "endpoint" : "{{@Random}}",
+            "grantType" : "password",
+            "header_1" : "{{@Random}}",
+            "header_2" : "{{@Random}}",
+            "header_3" : "{{@Random}}",
+            "id" : "",
+            "inactive" : false,
+            "invalid" : false,
+            "lastTestedOn" : null,
+            "method" : "{{@Random}}",
+            "methodToken" : "{{@Random}}",
+            "name" : "{{@Random}}",
+            "password" : "{{@PassAlphaNumSpl}}",
+            "passwordMasked" : false,
+            "preEstablishedRedirectUri" : "{{@Random}}",
+            "preScript" : "{{@Random}}",
+            "scope" : "{{@Random}}",
+            "tokenAccess" : "{{@Random}}",
+            "tokenName" : "{{@Random}}",
+            "useCurrentUri" : false,
+            "userAuthorizationUri" : "{{@Random}}",
+            "username" : "{{@Faker.name.username}}"
+          } ],
+          "commandChecks" : "{{@Random}}",
+          "createdBy" : { },
+          "createdDate" : "",
+          "cron" : "{{@Random}}",
+          "databases" : "{{@Random}}",
+          "email" : "{{@Faker.internet.emailAddress}}",
+          "id" : "",
+          "inactive" : false,
+          "modifiedBy" : { },
+          "modifiedDate" : "",
+          "projectId" : "{{@Random}}",
+          "roles" : "{{@Random}}",
+          "timeZone" : "{{@Faker.address.timeZone}}",
+          "tokenExample" : "{{@Random}}",
+          "version" : ""
+        },
+        "planType" : "BUSINESS",
+        "playbooksCount" : "{{@RandomInteger}}",
+        "props" : null,
+        "region" : "{{@Random}}",
+        "skipAbac" : false,
+        "skipGitbackup" : false,
+        "source" : "ETHICAL_CHECK",
+        "stage" : "{{@Random}}",
+        "status" : "{{@Random}}",
+        "swaggerEditorOas" : "{{@Random}}",
+        "tags" : [ "{{@Random}}" ],
+        "url" : "{{@Random}}",
+        "urlReachableOn" : null,
+        "validation" : false,
+        "version" : ""
+      },
+      "scope" : "PROJECT",
+      "type" : "{{@Random}}",
+      "value" : "{{@Random}}",
+      "version" : ""
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@StatusCode == 401 OR @StatusCode == 403'
+cleanup: []
+severity: High
+category: ABAC_Level3
+tags:
+- V1
+- Data_Access_Control
+- '[2020 CWE TOP 22 ] CWE - 269'
+- OWASP-API1
+- OWASP API Security Top 10
+- '[PCI DSS 3.2.1] 6.5.8'
+- Broken Object Level Authorization
+- Penetration Testing
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

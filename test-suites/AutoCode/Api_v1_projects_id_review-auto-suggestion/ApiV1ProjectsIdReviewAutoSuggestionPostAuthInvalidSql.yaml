@@ -1,0 +1,193 @@
+---
+parent: Api_v1_projects_id_review-auto-suggestion
+name: ApiV1ProjectsIdReviewAutoSuggestionPostAuthInvalidSql
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/projects/{id}/review-auto-suggestion
+endpoint: /api/v1/projects/{{@Var.id}}/review-auto-suggestion
+method: POST
+auth: Invalid_Auth_SQL
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "artificialIntelligenceComment" : "{{@Var.artificialIntelligenceComment}}",
+      "assertionDescription" : "{{@Var.assertionDescription}}",
+      "assertionsResult" : [ "{{@Random}}" ],
+      "auth" : "{{@Var.auth}}",
+      "averageCvss" : "{{@Var.averageCvss}}",
+      "bounty" : "{{@Var.bounty}}",
+      "category" : "{{@Var.category}}",
+      "categoryDisplayLabel" : "{{@Var.categoryDisplayLabel}}",
+      "comment" : "{{@Var.comment}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "cvssRating" : "{{@Var.cvssRating}}",
+      "cvssScore" : "{{@Var.cvssScore}}",
+      "endPoint" : "{{@Var.endPoint}}",
+      "env" : "{{@Var.env}}",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Var.baseUrl}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Var.description}}",
+        "endpoint" : "{{@Var.endpoint}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Var.account}}",
+          "accountType" : "{{@Var.accountType}}",
+          "id" : "{{@Var.id}}",
+          "issueType" : "{{@Var.issueType}}",
+          "name" : "{{@Var.name}}",
+          "projectKey" : "{{@Var.projectKey}}",
+          "url" : "{{@Var.url}}"
+        },
+        "localOffSet" : "{{@Var.localOffSet}}",
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Var.projectId}}",
+        "reachable" : false,
+        "refId" : "{{@Var.refId}}",
+        "region" : "{{@Var.region}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Var.url}}",
+        "urlReachableOn" : null,
+        "version" : "{{@Var.version}}"
+      },
+      "estimates" : "{{@Var.estimates}}",
+      "failedCount" : "{{@Var.failedCount}}",
+      "falsePositive" : false,
+      "generatorType" : "{{@Var.generatorType}}",
+      "id" : "{{@Var.id}}",
+      "inactive" : false,
+      "isNew" : "{{@Var.isNew}}",
+      "issueDesc" : "{{@Var.issueDesc}}",
+      "issues" : [ {
+        "autoSuggestionId" : "{{@Random}}",
+        "envName" : "{{@Random}}",
+        "issueId" : "{{@Random}}",
+        "issueNumber" : "{{@Random}}",
+        "issueTrackerType" : "{{@Random}}",
+        "jobId" : "{{@Faker.job.title}}",
+        "jobName" : "{{@Faker.job.title}}",
+        "runId" : "{{@Random}}",
+        "status" : "{{@Random}}"
+      } ],
+      "label" : "{{@Var.label}}",
+      "manualEndpoint" : false,
+      "method" : "{{@Var.method}}",
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "path" : "{{@Var.path}}",
+      "projectId" : "{{@Var.projectId}}",
+      "projectName" : "{{@Var.projectName}}",
+      "rank" : "{{@Var.rank}}",
+      "region" : "{{@Var.region}}",
+      "regression" : false,
+      "remediation" : "{{@Var.remediation}}",
+      "resourceName" : "{{@Var.resourceName}}",
+      "respStatusCode" : "{{@Var.respStatusCode}}",
+      "reviewTag" : false,
+      "runId" : "{{@Var.runId}}",
+      "severity" : "{{@Var.severity}}",
+      "status" : "{{@Var.status}}",
+      "suggestion" : "{{@Var.suggestion}}",
+      "suggestionId" : "{{@Var.suggestionId}}",
+      "tags" : "{{@Var.tags}}",
+      "testCaseNumber" : "{{@Var.testCaseNumber}}",
+      "testSuiteId" : "{{@Var.testSuiteId}}",
+      "testSuiteName" : "{{@Var.testSuiteName}}",
+      "totalFailed" : "{{@Var.totalFailed}}",
+      "totalPassed" : "{{@Var.totalPassed}}",
+      "updatedDate" : "{{@Var.updatedDate}}",
+      "version" : "{{@Var.version}}",
+      "wireLogs" : "{{@Var.wireLogs}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@ResponseTime < 7000'
+cleanup: []
+severity: Critical
+category: InvalidAuthSQL
+tags:
+- V1
+- OWASP-API2
+- '[PCI DSS 3.0] 6.5.1'
+- OTG-AUTHN-004
+- OWASP API Security Top 10
+- Broken Authentication
+- Non-Intrusive
+- Injection
+- '[2020 CWE TOP 14] CWE - 287'
+- '[MITRE ATT&CK] T1595.002'
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: '@APIsec/Common/auth_invalid_sql'
+  repeatDelay: 0
+  unmaskToken: true
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

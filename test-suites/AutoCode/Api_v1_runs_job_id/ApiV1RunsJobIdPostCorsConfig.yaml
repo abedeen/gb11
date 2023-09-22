@@ -1,0 +1,194 @@
+---
+parent: Api_v1_runs_job_id
+name: ApiV1RunsJobIdPostCorsConfig
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/runs/job/{id}
+endpoint: /api/v1/runs/job/{{@Var.id}}
+method: POST
+auth: Default
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+- 'Origin: vulnerable.{{@Host}}'
+testCases:
+- id: 1
+  body: |-
+    [ {
+      "applyNotificationtoAll" : false,
+      "categories" : "{{@Random}}",
+      "closedIssues" : "{{@RandomInteger}}",
+      "createdBy" : "",
+      "createdDate" : "",
+      "cron" : "{{@Random}}",
+      "defaulton" : false,
+      "description" : "{{@Random}}",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "Certificate",
+          "authorizationScheme" : "header",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "none",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "authorization_code",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Random}}",
+        "createdBy" : "",
+        "createdDate" : "",
+        "description" : "{{@Random}}",
+        "endpoint" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Random}}",
+          "accountType" : "Http",
+          "id" : "",
+          "issueType" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "projectKey" : "{{@Random}}",
+          "url" : "{{@Random}}"
+        },
+        "localOffSet" : "{{@RandomInteger}}",
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Random}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Random}}",
+        "reachable" : false,
+        "refId" : "{{@Random}}",
+        "region" : "{{@Random}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Random}}",
+        "urlReachableOn" : null,
+        "version" : ""
+      },
+      "id" : "",
+      "inactive" : false,
+      "issueTracker" : {
+        "account" : "{{@Random}}",
+        "accountType" : "Local",
+        "assigneeAccountId" : "{{@Random}}",
+        "folderName" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "issueType" : "{{@Random}}",
+        "labels" : "{{@Random}}",
+        "name" : "{{@Random}}",
+        "projectKey" : "{{@Random}}",
+        "skipLogging" : false,
+        "syncAll" : false,
+        "url" : "{{@Random}}"
+      },
+      "issueTrackerToDo" : false,
+      "logPolicy" : "DEBUG",
+      "modifiedBy" : "",
+      "modifiedDate" : "",
+      "name" : "{{@Random}}",
+      "nextFire" : null,
+      "notificationToDo" : false,
+      "notifications" : [ {
+        "account" : "{{@Random}}",
+        "channel" : "{{@Random}}",
+        "id" : "",
+        "name" : "{{@Random}}",
+        "notificationType" : "Git",
+        "skipNotification" : false,
+        "to" : "{{@Random}}"
+      } ],
+      "openIssues" : "{{@RandomInteger}}",
+      "project" : {
+        "createdBy" : "",
+        "createdDate" : "",
+        "id" : "",
+        "inactive" : false,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "name" : "{{@Random}}",
+        "org" : {
+          "createdBy" : "",
+          "createdDate" : "",
+          "id" : "",
+          "inactive" : false,
+          "modifiedBy" : "",
+          "modifiedDate" : "",
+          "name" : "{{@Random}}",
+          "orgPlan" : "{{@Random}}",
+          "version" : ""
+        },
+        "version" : ""
+      },
+      "refId" : "{{@Random}}",
+      "regions" : "{{@Random}}",
+      "tags" : [ "{{@Random}}" ],
+      "timeZone" : "{{@Faker.address.timeZone}}",
+      "version" : ""
+    } ]
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(\*)(.*)'
+- '@ResponseHeaders.Access-Control-Allow-Origin !=~ (.*)(vulnerable)(.*)'
+cleanup: []
+severity: Medium
+category: cors_config
+tags:
+- V1
+- Misconfiguration
+- OWASP-OriginHeaderScrutiny
+- OWASP-API7
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

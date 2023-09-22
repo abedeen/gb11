@@ -1,0 +1,199 @@
+---
+parent: Api_v1_jobs_validate-creds
+name: ApiV1JobsValidateCredsPostPii
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/jobs/validate-creds
+endpoint: /api/v1/jobs/validate-creds
+method: POST
+auth: Default
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "applyNotificationtoAll" : false,
+      "categories" : "{{@Var.categories}}",
+      "closedIssues" : "{{@Var.closedIssues}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "cron" : "{{@Var.cron}}",
+      "defaulton" : false,
+      "description" : "{{@Var.description}}",
+      "environment" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "baseUrl" : "{{@Var.baseUrl}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Var.description}}",
+        "endpoint" : "{{@Var.endpoint}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issueTracker" : {
+          "account" : "{{@Var.account}}",
+          "accountType" : "{{@Var.accountType}}",
+          "id" : "{{@Var.id}}",
+          "issueType" : "{{@Var.issueType}}",
+          "name" : "{{@Var.name}}",
+          "projectKey" : "{{@Var.projectKey}}",
+          "url" : "{{@Var.url}}"
+        },
+        "localOffSet" : "{{@Var.localOffSet}}",
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "projectCreation" : false,
+        "projectId" : "{{@Var.projectId}}",
+        "reachable" : false,
+        "refId" : "{{@Var.refId}}",
+        "region" : "{{@Var.region}}",
+        "testAuthResponses" : [ {
+          "authName" : "{{@Random}}",
+          "authType" : "{{@Random}}",
+          "endpointResponse" : "{{@Random}}",
+          "endpointUrl" : "{{@Random}}",
+          "method" : "{{@Random}}",
+          "oauthRequest" : "{{@Random}}",
+          "oauthResponse" : "{{@Random}}"
+        } ],
+        "url" : "{{@Var.url}}",
+        "urlReachableOn" : null,
+        "version" : "{{@Var.version}}"
+      },
+      "id" : "{{@Var.id}}",
+      "inactive" : false,
+      "issueTracker" : {
+        "account" : "{{@Var.account}}",
+        "accountType" : "{{@Var.accountType}}",
+        "assigneeAccountId" : "{{@Var.assigneeAccountId}}",
+        "folderName" : "{{@Var.folderName}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "issueType" : "{{@Var.issueType}}",
+        "labels" : "{{@Var.labels}}",
+        "name" : "{{@Var.name}}",
+        "projectKey" : "{{@Var.projectKey}}",
+        "skipLogging" : false,
+        "syncAll" : false,
+        "url" : "{{@Var.url}}"
+      },
+      "issueTrackerToDo" : false,
+      "logPolicy" : "{{@Var.logPolicy}}",
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "name" : "{{@Var.name}}",
+      "nextFire" : null,
+      "notificationToDo" : false,
+      "notifications" : [ {
+        "account" : "{{@Random}}",
+        "channel" : "{{@Random}}",
+        "id" : "",
+        "name" : "{{@Random}}",
+        "notificationType" : "BitBucket",
+        "skipNotification" : false,
+        "to" : "{{@Random}}"
+      } ],
+      "openIssues" : "{{@Var.openIssues}}",
+      "project" : {
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Var.name}}",
+        "org" : {
+          "createdBy" : "{{@Var.createdBy}}",
+          "createdDate" : "{{@Var.createdDate}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "modifiedBy" : "{{@Var.modifiedBy}}",
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "name" : "{{@Var.name}}",
+          "orgPlan" : "{{@Var.orgPlan}}",
+          "version" : "{{@Var.version}}"
+        },
+        "version" : "{{@Var.version}}"
+      },
+      "refId" : "{{@Var.refId}}",
+      "regions" : "{{@Var.regions}}",
+      "tags" : [ "{{@Random}}" ],
+      "timeZone" : "{{@Var.timeZone}}",
+      "version" : "{{@Var.version}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@StatusCode != 404'
+- '@Response.$..org != @PlainText'
+- '@Response.$..name != @PlainText'
+cleanup: []
+severity: Medium
+category: Pii
+tags:
+- V1
+- OWASP-API3
+- '[PCI DSS 3.0] 6.5.7'
+- '[PCI DSS 3.2] 6.5.1'
+- OWASP OTG-INPVAL-013
+- OWASP API Security Top 10
+- NON-INTRUSIVE
+- '[2020 CWE TOP 7] CWE - 200'
+- '[MITRE ATT&CK] T1119'
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: null
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

@@ -1,0 +1,341 @@
+---
+parent: Api_v1_autocode-generator
+name: ApiV1AutocodeGeneratorPostBodyParamXssInjection
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/autocode-generator
+endpoint: /api/v1/autocode-generator
+method: POST
+auth: Default
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "abacResources" : [ {
+        "createBody" : "{{@Random}}",
+        "createEndpoint" : "{{@Random}}",
+        "createUserAuth" : "{{@Random}}",
+        "createdBy" : "",
+        "createdDate" : "",
+        "deleteEndpoint" : "{{@Random}}",
+        "enumValues" : "{{@Random}}",
+        "generatorId" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "initScriptName" : "{{@Random}}",
+        "lock" : false,
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "resourceName" : "{{@Random}}",
+        "scripts" : [ {
+          "body" : "{{@Random}}",
+          "deleteEndPoint" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "resourceName" : "{{@Random}}",
+          "scriptName" : "{{@Random}}",
+          "scriptType" : "{{@Random}}",
+          "sequence" : "{{@RandomInteger}}",
+          "userAuth" : "{{@Random}}",
+          "validationScript" : false
+        } ],
+        "typeThreeCreateEndpoint" : "{{@Random}}",
+        "validations" : [ {
+          "body" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "inactive" : false,
+          "lock" : false,
+          "path" : "{{@Random}}",
+          "userAuth" : "{{@Random}}",
+          "validationType" : "{{@Random}}"
+        } ],
+        "version" : ""
+      } ],
+      "activatedDate" : null,
+      "activeByDefault" : false,
+      "activityAction" : "{{@Var.activityAction}}",
+      "activityText" : "{{@Injection}}",
+      "addOptionalParams" : false,
+      "assertionDescription" : "{{@Injection}}",
+      "assertions" : [ "{{@Random}}" ],
+      "assertionsText" : "{{@Injection}}",
+      "auth" : "{{@Injection}}",
+      "authors" : "{{@Injection}}",
+      "beta" : false,
+      "bountyValue" : "{{@Injection}}",
+      "category" : "{{@Injection}}",
+      "categoryGroup" : "{{@Var.categoryGroup}}",
+      "coverageMultiplier" : "{{@Var.coverageMultiplier}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "currentScripts" : "{{@Var.currentScripts}}",
+      "customHeaders" : "{{@Injection}}",
+      "customType" : "{{@Injection}}",
+      "cvssScore" : "{{@Var.cvssScore}}",
+      "cvssScoreType" : "{{@Var.cvssScoreType}}",
+      "database" : {
+        "name" : "{{@Injection}}",
+        "version" : "{{@Var.version}}"
+      },
+      "displayHeaderDescription" : "{{@Injection}}",
+      "displayHeaderLabel" : "{{@Injection}}",
+      "endpointSelection" : "{{@Var.endpointSelection}}",
+      "expectedScripts" : "{{@Var.expectedScripts}}",
+      "fixHours" : "{{@Injection}}",
+      "id" : "{{@Var.id}}",
+      "imageUrl" : "{{@Injection}}",
+      "inactive" : false,
+      "lastModifiedByUser" : "{{@Injection}}",
+      "matches" : [ {
+        "allowRoles" : "{{@Random}}",
+        "bodyProperties" : "{{@Random}}",
+        "denyRoles" : "{{@Random}}",
+        "id" : "",
+        "methods" : "{{@Random}}",
+        "name" : "{{@Random}}",
+        "pathPatterns" : "{{@Random}}",
+        "queryParams" : "{{@Random}}",
+        "resourceSamples" : "{{@Random}}",
+        "value" : "{{@Random}}"
+      } ],
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "newlyAdded" : false,
+      "owner" : "{{@Injection}}",
+      "payloads" : [ {
+        "categoryGroup" : "DEFAULT",
+        "createdBy" : "",
+        "createdDate" : "",
+        "endpoint" : "{{@Random}}",
+        "example" : "{{@Random}}",
+        "id" : "",
+        "inactive" : false,
+        "locked" : false,
+        "method" : "{{@Random}}",
+        "modifiedBy" : "",
+        "modifiedDate" : "",
+        "payload" : "{{@Random}}",
+        "projectId" : "{{@Random}}",
+        "resourceName" : "{{@Random}}",
+        "version" : ""
+      } ],
+      "project" : {
+        "account" : {
+          "accountType" : "{{@Var.accountType}}",
+          "createdBy" : "{{@Var.createdBy}}",
+          "createdDate" : "{{@Var.createdDate}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "isSSH" : false,
+          "modifiedBy" : "{{@Var.modifiedBy}}",
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "name" : "{{@Injection}}",
+          "org" : {
+            "createdBy" : "{{@Var.createdBy}}",
+            "createdDate" : "{{@Var.createdDate}}",
+            "id" : "{{@Var.id}}",
+            "inactive" : false,
+            "modifiedBy" : "{{@Var.modifiedBy}}",
+            "modifiedDate" : "{{@Var.modifiedDate}}",
+            "name" : "{{@Injection}}",
+            "orgPlan" : "{{@Injection}}",
+            "version" : "{{@Var.version}}"
+          },
+          "region" : "{{@Injection}}",
+          "version" : "{{@Var.version}}"
+        },
+        "activateScheduledReports" : false,
+        "activeGenerators" : [ "{{@Random}}" ],
+        "apiGatewayAccountType" : "{{@Var.apiGatewayAccountType}}",
+        "apiGatewayId" : "{{@Injection}}",
+        "apiGroupId" : "{{@Injection}}",
+        "apiId" : "{{@Injection}}",
+        "apiType" : "{{@Injection}}",
+        "autoGenSuites" : "{{@Var.autoGenSuites}}",
+        "baseUrl" : "{{@Injection}}",
+        "branch" : "{{@Injection}}",
+        "bugsClosed" : "{{@Var.bugsClosed}}",
+        "bugsOpen" : "{{@Var.bugsOpen}}",
+        "coverage" : "{{@Var.coverage}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "description" : "{{@Injection}}",
+        "endpointsCount" : "{{@Var.endpointsCount}}",
+        "entitledUsers" : [ {
+          "email" : "{{@Faker.internet.emailAddress}}",
+          "entitlementType" : "SECURITY_RESEARCHER",
+          "projectId" : "{{@Random}}",
+          "userId" : "{{@Random}}"
+        } ],
+        "envReachable" : false,
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "isFileLoad" : "{{@Injection}}",
+        "issueTracker" : {
+          "account" : "{{@Injection}}",
+          "accountType" : "{{@Var.accountType}}",
+          "id" : "{{@Var.id}}",
+          "issueType" : "{{@Injection}}",
+          "name" : "{{@Injection}}",
+          "projectKey" : "{{@Injection}}",
+          "url" : "{{@Injection}}"
+        },
+        "lastCommit" : "{{@Injection}}",
+        "lastRunCreation" : null,
+        "lastSync" : null,
+        "licenses" : [ "{{@Random}}" ],
+        "localOffSet" : "{{@Var.localOffSet}}",
+        "manualEpFound" : false,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Injection}}",
+        "noApi" : false,
+        "nonWorkingPlaybooksCount" : "{{@Var.nonWorkingPlaybooksCount}}",
+        "nonWorkingPlaybooksPercentage" : "{{@Var.nonWorkingPlaybooksPercentage}}",
+        "notifications" : [ {
+          "account" : "{{@Random}}",
+          "channel" : "{{@Random}}",
+          "id" : "",
+          "name" : "{{@Random}}",
+          "to" : "{{@Random}}"
+        } ],
+        "openAPISpec" : "{{@Injection}}",
+        "openText" : "{{@Injection}}",
+        "org" : {
+          "createdBy" : "{{@Var.createdBy}}",
+          "createdDate" : "{{@Var.createdDate}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "modifiedBy" : "{{@Var.modifiedBy}}",
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "name" : "{{@Injection}}",
+          "orgPlan" : "{{@Injection}}",
+          "version" : "{{@Var.version}}"
+        },
+        "owner" : "{{@Injection}}",
+        "personalizedCoverage" : {
+          "auths" : [ {
+            "accessTokenUri" : "{{@Random}}",
+            "authType" : "No_Authentication",
+            "authorizationScheme" : "query",
+            "body" : "{{@Random}}",
+            "clientAuthenticationScheme" : "query",
+            "clientId" : "{{@Random}}",
+            "clientSecret" : "{{@Random}}",
+            "cmdCache" : "{{@Random}}",
+            "contentType" : "{{@Random}}",
+            "curlHeaders" : "{{@Random}}",
+            "curlRequest" : "{{@Random}}",
+            "curlResponse" : "{{@Random}}",
+            "curlUrl" : "{{@Random}}",
+            "curlVariables" : "{{@Random}}",
+            "endpoint" : "{{@Random}}",
+            "grantType" : "password",
+            "header_1" : "{{@Random}}",
+            "header_2" : "{{@Random}}",
+            "header_3" : "{{@Random}}",
+            "id" : "",
+            "inactive" : false,
+            "invalid" : false,
+            "lastTestedOn" : null,
+            "method" : "{{@Random}}",
+            "methodToken" : "{{@Random}}",
+            "name" : "{{@Random}}",
+            "password" : "{{@PassAlphaNumSpl}}",
+            "passwordMasked" : false,
+            "preEstablishedRedirectUri" : "{{@Random}}",
+            "preScript" : "{{@Random}}",
+            "scope" : "{{@Random}}",
+            "tokenAccess" : "{{@Random}}",
+            "tokenName" : "{{@Random}}",
+            "useCurrentUri" : false,
+            "userAuthorizationUri" : "{{@Random}}",
+            "username" : "{{@Faker.name.username}}"
+          } ],
+          "commandChecks" : "{{@Injection}}",
+          "createdBy" : { },
+          "createdDate" : "{{@Var.createdDate}}",
+          "cron" : "{{@Injection}}",
+          "databases" : "{{@Injection}}",
+          "email" : "{{@Var.email}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "modifiedBy" : { },
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "projectId" : "{{@Injection}}",
+          "roles" : "{{@Injection}}",
+          "timeZone" : "{{@Var.timeZone}}",
+          "tokenExample" : "{{@Injection}}",
+          "version" : "{{@Var.version}}"
+        },
+        "planType" : "{{@Var.planType}}",
+        "playbooksCount" : "{{@Var.playbooksCount}}",
+        "props" : null,
+        "region" : "{{@Injection}}",
+        "skipAbac" : false,
+        "skipGitbackup" : false,
+        "source" : "{{@Var.source}}",
+        "stage" : "{{@Injection}}",
+        "status" : "{{@Injection}}",
+        "swaggerEditorOas" : "{{@Injection}}",
+        "tags" : [ "{{@Random}}" ],
+        "url" : "{{@Injection}}",
+        "urlReachableOn" : null,
+        "validation" : false,
+        "version" : "{{@Var.version}}"
+      },
+      "rank" : "{{@Injection}}",
+      "researchers" : "{{@Injection}}",
+      "saveAction" : false,
+      "sequenceOrder" : "{{@Var.sequenceOrder}}",
+      "severity" : "{{@Var.severity}}",
+      "showResponse" : false,
+      "skipVulnerabilityFiling" : false,
+      "supportedParams" : "{{@Injection}}",
+      "tags" : [ "{{@Random}}" ],
+      "type" : "{{@Injection}}",
+      "useCategoryAssertion" : false,
+      "version" : "{{@Var.version}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@StatusCode != 200'
+cleanup: []
+severity: Medium
+category: XSS_Injection
+tags:
+- V1
+- OWASP-API8
+- '[PCI DSS 3.0] 6.5.7'
+- '[PCI DSS 3.2] 6.5.7'
+- '[PCI DSS 3.2.1] 6.5.7'
+- OWASP - OTG-INPVAL-001
+- OWASP - OTG-INPVAL-002
+- OWASP API Security Top 10
+- Excessive Data Exposure
+- Security Misconfiguration
+- INPUT VALIDATION
+- NON-INTRUSIVE
+- '[2020 CWE TOP 1 ] CWE - 79'
+- '[MITRE ATT&CK] T1190'
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: '@APIsec/Common/XSS_Injection'
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true

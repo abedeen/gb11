@@ -1,0 +1,216 @@
+---
+parent: Api_v1_projects_id
+name: ApiV1ProjectsIdPutBodyParamSqlInjectionFilter
+description: null
+authors:
+- apisec Bot
+type: SUITE
+init: []
+localVariables: []
+path: /api/v1/projects/{id}
+endpoint: /api/v1/projects/{{@Var.id}}
+method: PUT
+auth: Default
+headers:
+- 'Accept: application/json'
+- 'Content-Type: application/json'
+testCases:
+- id: 1
+  body: |-
+    {
+      "account" : {
+        "accountType" : "{{@Var.accountType}}",
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "isSSH" : false,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Injection}}",
+        "org" : {
+          "createdBy" : "{{@Var.createdBy}}",
+          "createdDate" : "{{@Var.createdDate}}",
+          "id" : "{{@Var.id}}",
+          "inactive" : false,
+          "modifiedBy" : "{{@Var.modifiedBy}}",
+          "modifiedDate" : "{{@Var.modifiedDate}}",
+          "name" : "{{@Injection}}",
+          "orgPlan" : "{{@Injection}}",
+          "version" : "{{@Var.version}}"
+        },
+        "region" : "{{@Injection}}",
+        "version" : "{{@Var.version}}"
+      },
+      "activateScheduledReports" : false,
+      "activeGenerators" : [ "{{@Random}}" ],
+      "apiGatewayAccountType" : "{{@Var.apiGatewayAccountType}}",
+      "apiGatewayId" : "{{@Injection}}",
+      "apiGroupId" : "{{@Injection}}",
+      "apiId" : "{{@Injection}}",
+      "apiType" : "{{@Injection}}",
+      "autoGenSuites" : "{{@Var.autoGenSuites}}",
+      "baseUrl" : "{{@Injection}}",
+      "branch" : "{{@Injection}}",
+      "bugsClosed" : "{{@Var.bugsClosed}}",
+      "bugsOpen" : "{{@Var.bugsOpen}}",
+      "coverage" : "{{@Var.coverage}}",
+      "createdBy" : "{{@Var.createdBy}}",
+      "createdDate" : "{{@Var.createdDate}}",
+      "description" : "{{@Injection}}",
+      "endpointsCount" : "{{@Var.endpointsCount}}",
+      "entitledUsers" : [ {
+        "email" : "{{@Faker.internet.emailAddress}}",
+        "entitlementType" : "SECURITY_RESEARCHER",
+        "projectId" : "{{@Random}}",
+        "userId" : "{{@Random}}"
+      } ],
+      "envReachable" : false,
+      "id" : "{{@Var.id}}",
+      "inactive" : false,
+      "isFileLoad" : "{{@Injection}}",
+      "issueTracker" : {
+        "account" : "{{@Injection}}",
+        "accountType" : "{{@Var.accountType}}",
+        "id" : "{{@Var.id}}",
+        "issueType" : "{{@Injection}}",
+        "name" : "{{@Injection}}",
+        "projectKey" : "{{@Injection}}",
+        "url" : "{{@Injection}}"
+      },
+      "lastCommit" : "{{@Injection}}",
+      "lastRunCreation" : null,
+      "lastSync" : null,
+      "licenses" : [ "{{@Random}}" ],
+      "localOffSet" : "{{@Var.localOffSet}}",
+      "manualEpFound" : false,
+      "modifiedBy" : "{{@Var.modifiedBy}}",
+      "modifiedDate" : "{{@Var.modifiedDate}}",
+      "name" : "{{@Injection}}",
+      "noApi" : false,
+      "nonWorkingPlaybooksCount" : "{{@Var.nonWorkingPlaybooksCount}}",
+      "nonWorkingPlaybooksPercentage" : "{{@Var.nonWorkingPlaybooksPercentage}}",
+      "notifications" : [ {
+        "account" : "{{@Random}}",
+        "channel" : "{{@Random}}",
+        "id" : "",
+        "name" : "{{@Random}}",
+        "to" : "{{@Random}}"
+      } ],
+      "openAPISpec" : "{{@Injection}}",
+      "openText" : "{{@Injection}}",
+      "org" : {
+        "createdBy" : "{{@Var.createdBy}}",
+        "createdDate" : "{{@Var.createdDate}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "modifiedBy" : "{{@Var.modifiedBy}}",
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "name" : "{{@Injection}}",
+        "orgPlan" : "{{@Injection}}",
+        "version" : "{{@Var.version}}"
+      },
+      "owner" : "{{@Injection}}",
+      "personalizedCoverage" : {
+        "auths" : [ {
+          "accessTokenUri" : "{{@Random}}",
+          "authType" : "No_Authentication",
+          "authorizationScheme" : "query",
+          "body" : "{{@Random}}",
+          "clientAuthenticationScheme" : "query",
+          "clientId" : "{{@Random}}",
+          "clientSecret" : "{{@Random}}",
+          "cmdCache" : "{{@Random}}",
+          "contentType" : "{{@Random}}",
+          "curlHeaders" : "{{@Random}}",
+          "curlRequest" : "{{@Random}}",
+          "curlResponse" : "{{@Random}}",
+          "curlUrl" : "{{@Random}}",
+          "curlVariables" : "{{@Random}}",
+          "endpoint" : "{{@Random}}",
+          "grantType" : "password",
+          "header_1" : "{{@Random}}",
+          "header_2" : "{{@Random}}",
+          "header_3" : "{{@Random}}",
+          "id" : "",
+          "inactive" : false,
+          "invalid" : false,
+          "lastTestedOn" : null,
+          "method" : "{{@Random}}",
+          "methodToken" : "{{@Random}}",
+          "name" : "{{@Random}}",
+          "password" : "{{@PassAlphaNumSpl}}",
+          "passwordMasked" : false,
+          "preEstablishedRedirectUri" : "{{@Random}}",
+          "preScript" : "{{@Random}}",
+          "scope" : "{{@Random}}",
+          "tokenAccess" : "{{@Random}}",
+          "tokenName" : "{{@Random}}",
+          "useCurrentUri" : false,
+          "userAuthorizationUri" : "{{@Random}}",
+          "username" : "{{@Faker.name.username}}"
+        } ],
+        "commandChecks" : "{{@Injection}}",
+        "createdBy" : { },
+        "createdDate" : "{{@Var.createdDate}}",
+        "cron" : "{{@Injection}}",
+        "databases" : "{{@Injection}}",
+        "email" : "{{@Var.email}}",
+        "id" : "{{@Var.id}}",
+        "inactive" : false,
+        "modifiedBy" : { },
+        "modifiedDate" : "{{@Var.modifiedDate}}",
+        "projectId" : "{{@Injection}}",
+        "roles" : "{{@Injection}}",
+        "timeZone" : "{{@Var.timeZone}}",
+        "tokenExample" : "{{@Injection}}",
+        "version" : "{{@Var.version}}"
+      },
+      "planType" : "{{@Var.planType}}",
+      "playbooksCount" : "{{@Var.playbooksCount}}",
+      "props" : null,
+      "region" : "{{@Injection}}",
+      "skipAbac" : false,
+      "skipGitbackup" : false,
+      "source" : "{{@Var.source}}",
+      "stage" : "{{@Injection}}",
+      "status" : "{{@Injection}}",
+      "swaggerEditorOas" : "{{@Injection}}",
+      "tags" : [ "{{@Random}}" ],
+      "url" : "{{@Injection}}",
+      "urlReachableOn" : null,
+      "validation" : false,
+      "version" : "{{@Var.version}}"
+    }
+  inactive: false
+useCategoryAssertion: false
+assertions:
+- '@ResponseTime < 7000 OR @ResponseTime > 10000'
+cleanup: []
+severity: Medium
+category: sql_injection_filter
+tags:
+- V1
+- OWASP-API8
+- '[PCI DSS 3.0] 6.5.1'
+- '[PCI DSS 3.2.1] 6.5.1'
+- OWASP - OTG-INPVAL-005
+- OWASP API Security Top 10
+- Injection
+- Intrusive
+- '[2020 CWE TOP 6] CWE - 89'
+- '[MITRE ATT&CK] T1190'
+inactive: false
+policies:
+  initExec: Request
+  cleanupExec: Request
+  logger: DEBUG
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: '@APIsec/Common/sql_injection_filter'
+  repeatDelay: 0
+  unmaskToken: false
+  postExecutionDelay: 0
+  showResponse: true
+autoGenerated: true
